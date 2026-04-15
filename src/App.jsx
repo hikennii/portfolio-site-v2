@@ -7,6 +7,7 @@ import projectImg from "./assets/project.png";
 import aboutImg from "./assets/about.png";
 import resumeImg from "./assets/resume.png";
 import experienceImg from "./assets/experience.png";
+import contactImg from "./assets/contact.png";
 
 function App() {
   const [active, setActive] = useState("Projects");
@@ -16,6 +17,7 @@ function App() {
     About: aboutImg,
     Experience: experienceImg,
     Resume: resumeImg,
+    Contact: contactImg
   };
 
   return (

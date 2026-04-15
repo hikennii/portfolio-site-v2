@@ -1,5 +1,5 @@
 export default function Menu({ active, setActive }) {
-  const items = ["About", "Projects", "Experience", "Resume", ];
+  const items = ["About", "Projects", "Experience", "Resume", "Contact"];
 
   return (
     <div>
