@@ -23,19 +23,19 @@ function App() {
   return (
     <>
       <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          zIndex: -1,
-        }}
+      autoPlay
+      loop
+      muted
+      playsInline
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",
+        zIndex: -1,
+      }}
       >
         <source src="/background.mp4" type="video/mp4" />
       </video>
@@ -55,7 +55,7 @@ function App() {
             style={{
               width: "25%",
               maxWidth: "700px",
-              borderRadius: "10px",
+              borderRadius: "10px"
             }}
           />
         </div>
