@@ -11,6 +11,7 @@ export default function Menu({ active, setActive }) {
             opacity: active === item ? 1 : 0.4,
             fontSize: "3rem",
             cursor: "pointer",
+            textShadow: "0px 4px 10px rgba(0, 0, 0, 25)",
           }}
         >
           {item}

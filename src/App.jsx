@@ -21,26 +21,46 @@ function App() {
   };
 
   return (
-    <div style={{ display: "flex", height: "100vh", color: "white" }}>
-      <div className="left">
-        <Menu active={active} setActive={setActive} />
-      </div>
-
-      <div className="right">
-        <motion.img
-        key={active}
-        src={content[active]}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.25}}
+    <>
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
         style={{
-          width: "25%",
-          maxWidth: "700px",
-          borderRadius: "10px",
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          zIndex: -1,
         }}
-/>
+      >
+        <source src="/background.mp4" type="video/mp4" />
+      </video>
+
+      <div style={{ display: "flex", height: "100vh", color: "white" }}>
+        <div className="left">
+          <Menu active={active} setActive={setActive} />
+        </div>
+
+        <div className="right">
+          <motion.img
+            key={active}
+            src={content[active]}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.25 }}
+            style={{
+              width: "25%",
+              maxWidth: "700px",
+              borderRadius: "10px",
+            }}
+          />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
