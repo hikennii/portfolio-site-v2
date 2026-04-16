@@ -9,6 +9,7 @@ import resumeImg from "./assets/resume.png";
 import experienceImg from "./assets/experience.png";
 import contactImg from "./assets/contact.png";
 import backIcon from "./assets/back.png";
+import certImg from "./assets/cert.png";
 
 import Projects from "./components/projects.jsx";
 import About from "./components/about.jsx";
@@ -16,6 +17,7 @@ import Experience from "./components/experience.jsx";
 import Contact from "./components/contact.jsx";
 import Code from "./components/code.jsx";
 import Media from "./components/media.jsx";
+import Certifications from "./components/cert.jsx";
 
 function App() {
   const [active, setActive] = useState("Projects");
@@ -27,6 +29,7 @@ function App() {
     Experience: experienceImg,
     Resume: resumeImg,
     Contact: contactImg,
+    Certifications: certImg,
   };
 
   const pages = {
@@ -34,6 +37,7 @@ function App() {
     About: <About />,
     Experience: <Experience />,
     Contact: <Contact />,
+    Certifications: <Certifications />,
     IT: (<motion.div
     initial={{ opacity: 0, scale: 0.98 }}
     animate={{ opacity: 1, scale: 1 }}
@@ -108,7 +112,7 @@ function App() {
       <AnimatePresence mode="wait">
         {!selectedPage && (
           <motion.div
-            key={selectedPage}
+            key="main"
             initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
