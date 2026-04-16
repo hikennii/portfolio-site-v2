@@ -1,3 +1,7 @@
 export default function Code() {
-  return <div>My Code Projects</div>;
+  return (
+    <div className="info-container">
+      <div>My Code Projects</div>
+    </div>
+  )
 }

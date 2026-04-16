@@ -1,3 +1,7 @@
 export default function Experience() {
-  return <div>My Experience</div>;
+  return (
+    <div className="info-container">
+      <div>My Experience</div>
+    </div>
+  )
 }

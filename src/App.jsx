@@ -197,6 +197,7 @@ function App() {
               width: "100%",
               height: "100%",
               color: "white",
+              overflow: "hidden",
               zIndex: 50,
             }}
           >
@@ -205,7 +206,8 @@ function App() {
                 selectedPage === "Projects" 
                 ? "0 40px 40px" 
                 : "100px 40px 40px", 
-              height: "100%" 
+              height: "100%",
+              overflow: "auto"
               }}
             >
               {pages[selectedPage]}

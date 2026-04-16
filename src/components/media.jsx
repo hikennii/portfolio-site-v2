@@ -1,3 +1,7 @@
 export default function Media() {
-  return <div>My Media Projects</div>;
+  return (
+    <div className="info-container">
+      <div>My Media Projects</div>
+    </div>
+  )
 }

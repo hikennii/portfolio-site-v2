@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import itImg from "../assets/code.png";
 import mediaImg from "../assets/media.png";
+import graphicsImg from "../assets/graphics.png";
 
 export default function Projects({ setSelectedPage }) {
   const [active, setActive] = useState("IT");
@@ -11,9 +12,10 @@ export default function Projects({ setSelectedPage }) {
   const content = {
     IT: itImg,
     Media: mediaImg,
+    Graphics: graphicsImg
   };
 
-  const items = ["IT", "Media"];
+  const items = ["IT", "Media", "Graphics"];
 
   return (
     <motion.div

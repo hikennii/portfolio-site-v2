@@ -1,3 +1,7 @@
 export default function Certifications() {
-  return <div>My Certifications</div>;
+  return (
+    <div className="info-container">
+      <div>My Certifications</div>
+    </div>
+  )
 }
