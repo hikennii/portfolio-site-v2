@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export default function Menu({ active, setActive }) {
+export default function Menu({active, setActive, setSelectedPage}) {
   const items = ["Projects", "About", "Experience", "Resume", "Contact"];
 
   return (
@@ -10,7 +10,7 @@ export default function Menu({ active, setActive }) {
       variants={{
         visible: {
           transition: {
-            staggerChildren: 0.2,
+            staggerChildren: 0.23
           },
         },
       }}
@@ -24,26 +24,34 @@ export default function Menu({ active, setActive }) {
         <motion.h1
           key={item}
           onMouseEnter={() => setActive(item)}
-          variants={{
-            hidden: { opacity: 0, y: 30 },
-            visible: { opacity: 1, y: 0 }, 
+          onClick={() => {
+            if (item === "Resume") {
+              const link = document.createElement("a");
+              link.href = "/Kenny Le - Resume.pdf";
+              link.download = "Kenny-Le-Resume.pdf";
+              link.click();
+            } else {
+              setSelectedPage(item);
+            }
           }}
-          animate={{
-            opacity: active === item ? 1 : 0.3,
-            y: 0,
+          variants={{
+            hidden: { opacity: 0, y: 40 },
+            visible: {
+              opacity: active === item ? 1 : 0.3,
+              y: 0,
+            },
           }}
           transition={{
-            duration: 0.8,
-            ease: "easeOut",
+            duration: 1.5,
+            ease: [0.22, 1, 0.36, 1],
           }}
-          whileHover={{ scale: 1.03}}
-          whileTap={{ scale: 0.75}}
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.9 }}
           style={{
             fontSize: "3rem",
-            cursor: "pointer",
+            textShadow: "rgba(0, 0, 0, 1) 0px 4px 10px, rgba(0, 0, 0, 1) 0px 10px 30px",
             margin: 0,
             transition: "opacity 0.2s ease",
-            textShadow: "0px 4px 10px rgba(0, 0, 0, 25)",
           }}
         >
           {item}

@@ -40,6 +40,7 @@
 
 body {
   margin: 0;
+  cursor: none;
 }
 
 #root {
@@ -109,4 +110,22 @@ code {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: transparent;
+
+  position: fixed;
+  pointer-events: none;
+
+  transform: translate(-50%, -50%); 
+
+  z-index: 9999;
+}
+* {
+  cursor: none !important;
 }
