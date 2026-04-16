@@ -36,7 +36,8 @@ export default function Menu({ active, setActive }) {
             duration: 0.8,
             ease: "easeOut",
           }}
-          whileHover={{ scale: 1.03 }}
+          whileHover={{ scale: 1.03}}
+          whileTap={{ scale: 0.75}}
           style={{
             fontSize: "3rem",
             cursor: "pointer",

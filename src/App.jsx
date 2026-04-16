@@ -51,7 +51,7 @@ function App() {
             src={content[active]}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.25 }}
+            transition={{ duration: 0.4}}
             style={{
               width: "25%",
               maxWidth: "700px",
