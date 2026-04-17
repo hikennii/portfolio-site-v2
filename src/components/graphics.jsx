@@ -16,7 +16,7 @@ export default function Graphics() {
           bubble.style.top = y + "px";
         }}
         >
-          <img src="../public/graphic/windbreaker.png" style={{width:"465px", boxShadow:"rgba(0, 0, 0, 1) 0px 4px 10px"}}/>
+          <img src="../graphic/windbreaker.png" style={{width:"465px", boxShadow:"rgba(0, 0, 0, 1) 0px 4px 10px"}}/>
           <div className="bubble"><strong>Side Project</strong></div>
         </div>
         <div
@@ -33,7 +33,7 @@ export default function Graphics() {
         }}
         >
           <video
-          src="../public/graphic/stt25poster.mp4"
+          src="../graphic/stt25poster.mp4"
           autoPlay
           loop
           muted 

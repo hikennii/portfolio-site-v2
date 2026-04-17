@@ -226,7 +226,7 @@ function App() {
               height: "100vh",
               color: "white",
               overflow: 
-              selectedPage === "Experience" || selectedPage === "About" || selectedPage === "Graphics"
+              selectedPage === "Experience" || selectedPage === "About" || selectedPage === "Graphics" || selectedPage === "Media"
               ? "visible"
               : "hidden"
               ,
