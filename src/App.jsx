@@ -203,6 +203,7 @@ function App() {
               <img
                 src={backIcon}
                 style={{ width: "35px"}}
+                data-cursor="pointer"
               />
             </motion.span>
           </motion.div>
