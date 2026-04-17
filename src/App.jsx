@@ -39,7 +39,15 @@ function App() {
     Experience: <Experience />,
     Contact: <Contact />,
     Certifications: <Certifications />,
-    Graphics: <Graphics />,
+    Graphics: (<motion.div
+    initial={{ opacity: 0, scale: 0.98 }}
+    animate={{ opacity: 1, scale: 1 }}
+    exit={{ opacity: 0, scale: 1.02 }}
+    transition={{ duration: 0.4 }}
+    >
+      <Graphics />
+    </motion.div>
+    ),
     Code: (<motion.div
     initial={{ opacity: 0, scale: 0.98 }}
     animate={{ opacity: 1, scale: 1 }}
@@ -75,7 +83,7 @@ function App() {
     window.addEventListener("mousemove", move);
 
     const clickables = document.querySelectorAll(
-    "a, button, img, [data-cursor='pointer']"
+    "a, button, [data-cursor='pointer']"
     );
 
     clickables.forEach((el) => {
@@ -217,7 +225,7 @@ function App() {
               height: "100vh",
               color: "white",
               overflow: 
-              selectedPage === "Experience" || selectedPage === "About"
+              selectedPage === "Experience" || selectedPage === "About" || selectedPage === "Graphics"
               ? "visible"
               : "hidden"
               ,

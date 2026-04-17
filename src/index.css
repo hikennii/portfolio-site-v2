@@ -170,3 +170,14 @@ code {
   padding-bottom: 25px;
 }
 
+.graphic-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  width: 80%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  padding-bottom: 25px;
+}
