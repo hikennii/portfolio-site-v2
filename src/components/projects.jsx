@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import itImg from "../assets/code.png";
+import codeImg from "../assets/code.png";
 import mediaImg from "../assets/media.png";
 import graphicsImg from "../assets/graphics.png";
 
@@ -10,12 +10,12 @@ export default function Projects({ setSelectedPage }) {
   const [isExiting, setIsExiting] = useState(false);
 
   const content = {
-    IT: itImg,
+    Code: codeImg,
     Media: mediaImg,
     Graphics: graphicsImg
   };
 
-  const items = ["IT", "Media", "Graphics"];
+  const items = ["Code", "Media", "Graphics"];
 
   return (
     <motion.div

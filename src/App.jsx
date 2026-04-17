@@ -40,7 +40,7 @@ function App() {
     Contact: <Contact />,
     Certifications: <Certifications />,
     Graphics: <Graphics />,
-    IT: (<motion.div
+    Code: (<motion.div
     initial={{ opacity: 0, scale: 0.98 }}
     animate={{ opacity: 1, scale: 1 }}
     exit={{ opacity: 0, scale: 1.02 }}
@@ -200,7 +200,7 @@ function App() {
               height: "100vh",
               color: "white",
               overflow: 
-              selectedPage === "Experience"
+              selectedPage === "Experience" || selectedPage === "About"
               ? "visible"
               : "hidden"
               ,
