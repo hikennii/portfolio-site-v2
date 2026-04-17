@@ -6,7 +6,7 @@ export default function About() {
     <div className="info-container-backdrop">
       <h1>About me!</h1>
       <img src={meImg} style={{width:"10%", margin:"0"}}/>
-      <h2>I'm Kenny!</h2>
+      <h2 style={{fontWeight:"bold"}}>I'm Kenny!</h2>
       <div style={{width:"80%"}}>
         <h3>
           I’m an Information Technology and Informatics student at Rutgers University with minors in Data Science <br/>and Digital Communication, Information, and Media. I’m interested in the mix between technology, data, and creative media.
