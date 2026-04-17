@@ -118,6 +118,7 @@ code {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   border: 2px solid rgb(231, 231, 231);
   
   position: fixed;
@@ -132,11 +133,31 @@ code {
 }
 
 .info-container {
-  text-shadow: 0px 4px 10px rgba(0,0,0,1);
+  text-shadow: rgba(0, 0, 0, 1) 0px 4px 10px, rgba(0, 0, 0, 1) 0px 10px 30px;
   display: flex;
   justify-content: center;
   gap: 0;
   align-items: center;
   text-align: center;
   flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
 }
+
+.info-container-backdrop {
+  text-shadow: rgba(0, 0, 0, 1) 0px 4px 10px, rgba(0, 0, 0, 1) 0px 10px 30px;
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 25px;
+}
+

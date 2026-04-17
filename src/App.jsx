@@ -18,6 +18,7 @@ import Contact from "./components/contact.jsx";
 import Code from "./components/code.jsx";
 import Media from "./components/media.jsx";
 import Certifications from "./components/cert.jsx";
+import Graphics from "./components/graphics.jsx";
 
 function App() {
   const [active, setActive] = useState("Projects");
@@ -38,6 +39,7 @@ function App() {
     Experience: <Experience />,
     Contact: <Contact />,
     Certifications: <Certifications />,
+    Graphics: <Graphics />,
     IT: (<motion.div
     initial={{ opacity: 0, scale: 0.98 }}
     animate={{ opacity: 1, scale: 1 }}
@@ -156,7 +158,7 @@ function App() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             style={{
-              position: "fixed",
+              position: "absolute",
               top: "40px",
               left: "50%",
               transform: "translateX(-50%)",
@@ -169,7 +171,7 @@ function App() {
               whileTap={{ scale: 0.9 }}
               style={{
                 display: "inline-block",
-                textShadow: "0px 4px 10px rgba(0,0,0,1)",
+                textShadow: "rgba(0, 0, 0, 1) 0px 4px 10px, rgba(0, 0, 0, 1) 0px 10px 30px",
                 color: "white",
               }}
             >
@@ -195,9 +197,13 @@ function App() {
               top: 0,
               left: 0,
               width: "100%",
-              height: "100%",
+              height: "100vh",
               color: "white",
-              overflow: "hidden",
+              overflow: 
+              selectedPage === "Experience"
+              ? "visible"
+              : "hidden"
+              ,
               zIndex: 50,
             }}
           >
@@ -206,8 +212,7 @@ function App() {
                 selectedPage === "Projects" 
                 ? "0 40px 40px" 
                 : "100px 40px 40px", 
-              height: "100%",
-              overflow: "auto"
+              height: "100vh",
               }}
             >
               {pages[selectedPage]}
