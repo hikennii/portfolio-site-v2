@@ -181,3 +181,39 @@ code {
   flex-wrap: wrap;
   padding-bottom: 25px;
 }
+
+.graphic {
+  position: relative;
+}
+
+.bubble {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  transform: translate(-50%, -55px);
+
+  background: rgba(255, 255, 255, 0.8);
+  color: black;
+
+  padding: 6px 12px;
+  border-radius: 18px;
+
+  font-size: 14px;
+  white-space: nowrap;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.2s ease, transform 0.2s ease;
+
+  max-width: 5000px;
+}
+.graphic:hover .bubble {
+  opacity: 1;
+  transform: translate(-50%, -55px);
+  z-index: 10001;
+  transition-delay: 0.5s;
+}
+
