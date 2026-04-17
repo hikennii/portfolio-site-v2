@@ -21,7 +21,7 @@ export default function Menu({active, setActive, setSelectedPage}) {
       }}
     >
       {items.map((item) => (
-        <motion.h1
+        <motion.h1 data-cursor="pointer"
           key={item}
           onMouseEnter={() => setActive(item)}
           onClick={() => {

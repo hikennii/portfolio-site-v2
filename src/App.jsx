@@ -69,12 +69,29 @@ function App() {
       cursor.style.top = e.clientY + "px";
     };
 
+    const addHover = () => cursor.classList.add("hover");
+    const removeHover = () => cursor.classList.remove("hover");
+
     window.addEventListener("mousemove", move);
 
+    const clickables = document.querySelectorAll(
+    "a, button, img, [data-cursor='pointer']"
+    );
+
+    clickables.forEach((el) => {
+      el.addEventListener("mouseenter", addHover);
+      el.addEventListener("mouseleave", removeHover);
+    });
+
     return () => {
-      window.removeEventListener("mousemove", move);
+    window.removeEventListener("mousemove", move);
+
+      clickables.forEach((el) => {
+        el.removeEventListener("mouseenter", addHover);
+        el.removeEventListener("mouseleave", removeHover);
+      });
     };
-  }, []);
+  }, [selectedPage]);
 
   return (
     <>
