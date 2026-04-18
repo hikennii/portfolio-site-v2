@@ -80,6 +80,11 @@ function App() {
 
   useEffect(() => {
     const cursor = document.getElementById("cursor");
+    
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {
+      });
+    }
 
     const move = (e) => {
       cursor.style.left = e.clientX + "px";
