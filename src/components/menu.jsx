@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 export default function Menu({active, setActive, setSelectedPage}) {
-  const items = ["Projects", "About", "Experience", "Certifications", "Resume", "Contact"];
+  const items = ["About", "Projects", "Experience", "Certifications", "Resume", "Contact"];
 
   return (
     <motion.div

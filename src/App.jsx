@@ -23,6 +23,7 @@ import Graphics from "./components/graphics.jsx";
 function App() {
   const [active, setActive] = useState("Projects");
   const [selectedPage, setSelectedPage] = useState(null);
+  const [previousPage, setPreviousPage] = useState(null);
 
   const content = {
     Projects: projectImg,
@@ -34,7 +35,13 @@ function App() {
   };
 
   const pages = {
-    Projects: <Projects setSelectedPage={setSelectedPage} />,
+    Projects: (
+      <Projects
+        setSelectedPage={setSelectedPage}
+        setPreviousPage={setPreviousPage}
+        selectedPage={selectedPage}
+      />
+    ),
     About: <About />,
     Experience: <Experience />,
     Contact: <Contact />,
@@ -209,7 +216,14 @@ function App() {
               transform: "translateX(-50%)",
               zIndex: 9999,
             }}
-            onClick={() => setSelectedPage(null)}
+            onClick={() => {
+            if (previousPage) {
+              setSelectedPage(previousPage);
+              setPreviousPage(null);
+            } else {
+              setSelectedPage(null);
+            }
+          }}
           >
             <motion.span
               whileHover={{ scale: 1.05 }}

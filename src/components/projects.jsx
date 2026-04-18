@@ -5,7 +5,7 @@ import codeImg from "../assets/code.png";
 import mediaImg from "../assets/media.png";
 import graphicsImg from "../assets/graphics.png";
 
-export default function Projects({ setSelectedPage }) {
+export default function Projects({setSelectedPage, setPreviousPage, selectedPage}) {
   const [active, setActive] = useState("IT");
   const [isExiting, setIsExiting] = useState(false);
 
@@ -43,7 +43,8 @@ export default function Projects({ setSelectedPage }) {
                 setIsExiting(true); 
 
                 setTimeout(() => {
-                  setSelectedPage(item); 
+                  setPreviousPage(selectedPage);
+                  setSelectedPage(item);
                 }, 500);
               }}
               variants={{

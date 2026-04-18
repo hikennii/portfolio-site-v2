@@ -68,7 +68,7 @@ export default function Experience() {
       <h3>Student Assistant</h3>
       <p>Asian American Cultural Center</p>
       <p>Feb 2024 - Present</p>
-      <ul style={{textAlign:"left", width:"75%"}}>
+      <ul style={{textAlign:"left", width:"55%"}}>
         <li>Collaborated with over 20+ staff and volunteers to create smooth, successful event experiences.</li>
         <li>Contributed to the preparation and planning of cultural programs and community events.</li>
         <li>Distributed food and supplies to event attendees, ensuring they had a smooth and enjoyable experience.</li>
