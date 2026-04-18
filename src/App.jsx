@@ -112,7 +112,7 @@ function App() {
 
   return (
     <>
-      <div className="custom-cursor" id="cursor" />
+      {!isTouchDevice && <div className="custom-cursor" id="cursor" />}
 
       <div
         style={{

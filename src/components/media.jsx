@@ -4,7 +4,7 @@ export default function Media() {
       <h1>Media Projects</h1>
       <br/>
       <h3>In a Blink</h3>
-      <video src="/graphic/stt25poster.mp4" autoPlay muted loop style={{width:"250px", boxShadow:"rgba(0, 0, 0, 1) 0px 4px 10px"}}/>
+      <video src="/graphic/stt25poster.mp4" autoPlay muted loop playsInline style={{width:"250px", boxShadow:"rgba(0, 0, 0, 1) 0px 4px 10px"}}/>
       <br/>
       <p>Rutgers Vietnamese Association 2025 annual charity film.<br/>
       (Responsible for Timestamps 0:00 - 22:04 and 41:55 - 54:03.)</p>
