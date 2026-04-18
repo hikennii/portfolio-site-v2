@@ -225,4 +225,9 @@ code {
   padding-bottom: 4px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 3px 8px;
+  transition: transform 0.2s ease;
+}
+
+.mediabutton:hover {
+  transform: scale(1.03);
 }
