@@ -10,6 +10,7 @@ import experienceImg from "./assets/experience.png";
 import contactImg from "./assets/contact.png";
 import backIcon from "./assets/back.png";
 import certImg from "./assets/cert.png";
+import fallbackImg from "./assets/fallback.jpg";
 
 import Projects from "./components/projects.jsx";
 import About from "./components/about.jsx";
@@ -120,7 +121,7 @@ function App() {
           left: 0,
           width: "100%",
           height: "100%",
-          backgroundImage: "./assets/fallback.jpg",
+          backgroundImage: {fallbackImg},
           backgroundSize: "cover",
           backgroundPosition: "center",
           zIndex: -2,
