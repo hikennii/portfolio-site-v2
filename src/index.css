@@ -14,7 +14,16 @@
   -moz-osx-font-smoothing: grayscale;
 
   @media (max-width: 1024px) {
-    font-size: 16px;
+    font-size: 10px;
+    h1 {
+      font-size: 28px;
+    }
+    .right img {
+      width: 60% !important;
+    }
+    .left {
+      margin-left: 10px;
+    }
   }
 }
 
@@ -231,3 +240,4 @@ code {
 .mediabutton:hover {
   transform: scale(1.03);
 }
+
