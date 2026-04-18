@@ -26,7 +26,8 @@ function App() {
   const [selectedPage, setSelectedPage] = useState(null);
   const [previousPage, setPreviousPage] = useState(null);
   const [videoLoaded, setVideoLoaded] = useState(false);
-  const videoRef = useRef(null);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  
 
   const content = {
     Projects: projectImg,
@@ -80,6 +81,11 @@ function App() {
   };
 
   useEffect(() => {
+    const media = window.matchMedia("(pointer: coarse)");
+    setIsTouchDevice(media.matches);
+  }, []);
+
+  useEffect(() => {
     const cursor = document.getElementById("cursor");
 
     const move = (e) => {
@@ -111,13 +117,6 @@ function App() {
     };
   }, [selectedPage]);
 
-  useEffect(() => {
-  if (videoRef.current) {
-    videoRef.current.play().catch(() => {
-    });
-  }
-}, []);
-
   return (
     <>
       {!isTouchDevice && <div className="custom-cursor" id="cursor" />}
@@ -129,7 +128,7 @@ function App() {
           left: 0,
           width: "100%",
           height: "100%",
-          backgroundImage: {fallbackImg},
+          backgroundImage: `url(${fallbackImg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           zIndex: -2,
