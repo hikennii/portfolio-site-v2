@@ -146,6 +146,26 @@ function App() {
             transition={{ duration: 0.5 }}
             style={{ display: "flex", height: "100vh", color: "white" }}
           >
+            
+          <motion.h1
+            initial={{ opacity: 0, y: -20, x: "-50%" }}
+            animate={{ opacity: 1, y: 0, x: "-50%" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            exit={{opacity: 0}}
+            style={{
+              position: "fixed",
+              top: "40px",
+              left: "50%",
+              transform: "translateX(-50%)",
+              zIndex: 1000,
+              margin: 0,
+              pointerEvents: "none",
+              textShadow:"rgba(0, 0, 0, 1) 0px 4px 10px, rgba(0, 0, 0, 1) 0px 10px 30px"
+            }}
+          >
+            Kenny Le
+          </motion.h1>
+          
             <div className="left">
               <Menu
                 active={active}
