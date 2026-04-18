@@ -112,11 +112,26 @@ function App() {
     <>
       <div className="custom-cursor" id="cursor" />
 
+      <div
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          backgroundImage: "./assets/fallback.jpg",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          zIndex: -2,
+        }}
+      />
+
       <video
         autoPlay
         loop
         muted
         playsInline
+        preload="auto"
         style={{
           position: "fixed",
           top: 0,
