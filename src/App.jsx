@@ -24,6 +24,7 @@ function App() {
   const [active, setActive] = useState("Projects");
   const [selectedPage, setSelectedPage] = useState(null);
   const [previousPage, setPreviousPage] = useState(null);
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   const content = {
     Projects: projectImg,
@@ -132,6 +133,7 @@ function App() {
         muted
         playsInline
         preload="auto"
+        onLoadedData={() => setVideoLoaded(true)}
         style={{
           position: "fixed",
           top: 0,
@@ -140,6 +142,7 @@ function App() {
           height: "100%",
           objectFit: "cover",
           zIndex: -1,
+          display: videoLoaded ? "block" : "none"
         }}
       >
         <source src="/background.mp4" type="video/mp4" />
