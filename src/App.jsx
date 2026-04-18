@@ -26,6 +26,7 @@ function App() {
   const [selectedPage, setSelectedPage] = useState(null);
   const [previousPage, setPreviousPage] = useState(null);
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const videoRef = useRef(null);
 
   const content = {
     Projects: projectImg,
@@ -80,11 +81,6 @@ function App() {
 
   useEffect(() => {
     const cursor = document.getElementById("cursor");
-    
-    if (videoRef.current) {
-      videoRef.current.play().catch(() => {
-      });
-    }
 
     const move = (e) => {
       cursor.style.left = e.clientX + "px";
@@ -114,6 +110,13 @@ function App() {
       });
     };
   }, [selectedPage]);
+
+  useEffect(() => {
+  if (videoRef.current) {
+    videoRef.current.play().catch(() => {
+    });
+  }
+}, []);
 
   return (
     <>
