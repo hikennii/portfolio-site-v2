@@ -240,7 +240,7 @@ function App() {
               top: "40px",
               left: "50%",
               transform: "translateX(-50%)",
-              zIndex: 100000,
+              zIndex: 9999,
             }}
             onClick={() => {
             if (previousPage) {
