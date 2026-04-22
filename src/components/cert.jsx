@@ -21,7 +21,7 @@ export default function Certifications() {
       <a href="../public/fema.pdf" target="_blank" style={{textDecoration:"none"}}>
         <h2><strong>FEMA IS-42.a: Social Media in Emergency Management</strong></h2>
       </a>
-      <p>June 2025</p>
+      <p>Oct 2024</p>
     </div>
   )
 }
