@@ -27,7 +27,6 @@ function App() {
   const [previousPage, setPreviousPage] = useState(null);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
-  
 
   const content = {
     Projects: projectImg,
@@ -50,33 +49,35 @@ function App() {
     Experience: <Experience />,
     Contact: <Contact />,
     Certifications: <Certifications />,
-    Graphics: (<motion.div
-    initial={{ opacity: 0, scale: 0.98 }}
-    animate={{ opacity: 1, scale: 1 }}
-    exit={{ opacity: 0, scale: 1.02 }}
-    transition={{ duration: 0.4 }}
-    >
-      <Graphics />
-    </motion.div>
+    Graphics: (
+      <motion.div
+        initial={{ opacity: 0, scale: 0.98 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 1.02 }}
+        transition={{ duration: 0.4 }}
+      >
+        <Graphics />
+      </motion.div>
     ),
-    Code: (<motion.div
-    initial={{ opacity: 0, scale: 0.98 }}
-    animate={{ opacity: 1, scale: 1 }}
-    exit={{ opacity: 0, scale: 1.02 }}
-    transition={{ duration: 0.4 }}
-  >
-      <Code />
-    </motion.div>
+    Code: (
+      <motion.div
+        initial={{ opacity: 0, scale: 0.98 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 1.02 }}
+        transition={{ duration: 0.4 }}
+      >
+        <Code />
+      </motion.div>
     ),
-    
-    Media: (<motion.div
-      initial={{ opacity: 0, scale: 0.98 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 1.02 }}
-      transition={{ duration: 0.4 }}
-    >
-      <Media />
-    </motion.div>
+    Media: (
+      <motion.div
+        initial={{ opacity: 0, scale: 0.98 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 1.02 }}
+        transition={{ duration: 0.4 }}
+      >
+        <Media />
+      </motion.div>
     ),
   };
 
@@ -89,33 +90,33 @@ function App() {
     const cursor = document.getElementById("cursor");
 
     const move = (e) => {
+      if (!cursor) return;
       cursor.style.left = e.clientX + "px";
       cursor.style.top = e.clientY + "px";
     };
 
-    const addHover = () => cursor.classList.add("hover");
-    const removeHover = () => cursor.classList.remove("hover");
+    const handleMouseOver = (e) => {
+      if (e.target.closest("a, button, [data-cursor='pointer']")) {
+        cursor?.classList.add("hover");
+      }
+    };
+
+    const handleMouseOut = (e) => {
+      if (e.target.closest("a, button, [data-cursor='pointer']")) {
+        cursor?.classList.remove("hover");
+      }
+    };
 
     window.addEventListener("mousemove", move);
-
-    const clickables = document.querySelectorAll(
-    "a, button, [data-cursor='pointer']"
-    );
-
-    clickables.forEach((el) => {
-      el.addEventListener("mouseenter", addHover);
-      el.addEventListener("mouseleave", removeHover);
-    });
+    document.addEventListener("mouseover", handleMouseOver);
+    document.addEventListener("mouseout", handleMouseOut);
 
     return () => {
-    window.removeEventListener("mousemove", move);
-
-      clickables.forEach((el) => {
-        el.removeEventListener("mouseenter", addHover);
-        el.removeEventListener("mouseleave", removeHover);
-      });
+      window.removeEventListener("mousemove", move);
+      document.removeEventListener("mouseover", handleMouseOver);
+      document.removeEventListener("mouseout", handleMouseOut);
     };
-  }, [selectedPage]);
+  }, []);
 
   return (
     <>
@@ -179,26 +180,25 @@ function App() {
             transition={{ duration: 0.5 }}
             style={{ display: "flex", height: "100vh", color: "white" }}
           >
-            
-          <motion.h1
-            initial={{ opacity: 0, y: -20, x: "-50%" }}
-            animate={{ opacity: 1, y: 0, x: "-50%" }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            exit={{opacity: 0}}
-            style={{
-              position: "fixed",
-              top: "40px",
-              left: "50%",
-              transform: "translateX(-50%)",
-              zIndex: 1000,
-              margin: 0,
-              pointerEvents: "none",
-              textShadow:"rgba(0, 0, 0, 1) 0px 4px 10px, rgba(0, 0, 0, 1) 0px 10px 30px"
-            }}
-          >
-            Kenny Le
-          </motion.h1>
-          
+            <motion.h1
+              initial={{ opacity: 0, y: -20, x: "-50%" }}
+              animate={{ opacity: 1, y: 0, x: "-50%" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              exit={{opacity: 0}}
+              style={{
+                position: "fixed",
+                top: "40px",
+                left: "50%",
+                transform: "translateX(-50%)",
+                zIndex: 1000,
+                margin: 0,
+                pointerEvents: "none",
+                textShadow:"rgba(0, 0, 0, 1) 0px 4px 10px, rgba(0, 0, 0, 1) 0px 10px 30px"
+              }}
+            >
+              Kenny Le
+            </motion.h1>
+
             <div className="left">
               <Menu
                 active={active}
@@ -243,13 +243,13 @@ function App() {
               zIndex: 9999,
             }}
             onClick={() => {
-            if (previousPage) {
-              setSelectedPage(previousPage);
-              setPreviousPage(null);
-            } else {
-              setSelectedPage(null);
-            }
-          }}
+              if (previousPage) {
+                setSelectedPage(previousPage);
+                setPreviousPage(null);
+              } else {
+                setSelectedPage(null);
+              }
+            }}
           >
             <motion.span
               whileHover={{ scale: 1.05 }}
@@ -285,20 +285,24 @@ function App() {
               width: "100%",
               height: "100vh",
               color: "white",
-              overflow: 
-              selectedPage === "Experience" || selectedPage === "About" || selectedPage === "Graphics" || selectedPage === "Media" || selectedPage === "Code"
-              ? "visible"
-              : "hidden"
-              ,
+              overflow:
+                selectedPage === "Experience" ||
+                selectedPage === "About" ||
+                selectedPage === "Graphics" ||
+                selectedPage === "Media" ||
+                selectedPage === "Code"
+                  ? "visible"
+                  : "hidden",
               zIndex: 50,
             }}
           >
-            <div style={{ 
-              padding: 
-                selectedPage === "Projects" 
-                ? "0 40px 40px" 
-                : "100px 40px 40px", 
-              height: "100vh",
+            <div
+              style={{
+                padding:
+                  selectedPage === "Projects"
+                    ? "0 40px 40px"
+                    : "100px 40px 40px",
+                height: "100vh",
               }}
             >
               {pages[selectedPage]}

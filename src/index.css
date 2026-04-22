@@ -136,7 +136,7 @@ code {
   transform: translate(-50%, -20%); 
   transition: transform 0.15s ease, background 0.2s ease;
 
-  z-index: 100000;
+  z-index: 99999999;
 }
 
 
